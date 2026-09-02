@@ -25,9 +25,12 @@ public class RepositorioService {
                 .descripcion(dto.descripcion())
                 .urlRepositorio(dto.urlRepositorio())
                 .propietarioId(propietarioId)
+                .sede(dto.sede())
+                .estado(dto.estado())
                 .visibilidad(dto.visibilidad())
                 .colaboradoresIds(dto.visibilidad() == Visibilidad.COMPARTIDO && dto.colaboradoresIds() != null
                         ? dto.colaboradoresIds() : List.of())
+                .archivosAdjuntos(dto.archivosAdjuntos() != null ? dto.archivosAdjuntos() : List.of())
                 .build();
         return repositorioProyectoRepository.save(repo);
     }

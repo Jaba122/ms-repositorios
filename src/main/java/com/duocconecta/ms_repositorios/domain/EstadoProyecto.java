@@ -1,5 +1,7 @@
 package com.duocconecta.ms_repositorios.domain;
 
-public class EstadoProyecto {
-    
+public enum EstadoProyecto {
+    EN_DESARROLLO,
+    TERMINADO,
+    BUSCANDO_EQUIPO
 }
