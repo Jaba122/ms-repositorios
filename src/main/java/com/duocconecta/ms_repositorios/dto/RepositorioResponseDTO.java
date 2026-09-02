@@ -1,5 +1,6 @@
 package com.duocconecta.ms_repositorios.dto;
 
+import com.duocconecta.ms_repositorios.domain.EstadoProyecto;
 import com.duocconecta.ms_repositorios.domain.RepositorioProyecto;
 import com.duocconecta.ms_repositorios.domain.Visibilidad;
 
@@ -13,13 +14,17 @@ public record RepositorioResponseDTO(
         String descripcion,
         String urlRepositorio,
         String propietarioId,
+        String sede,
+        EstadoProyecto estado,
         Visibilidad visibilidad,
         List<String> colaboradoresIds,
+        List<String> archivosAdjuntos,
         Instant fechaCreacion
 ) {
     public static RepositorioResponseDTO desdeEntidad(RepositorioProyecto r) {
         return new RepositorioResponseDTO(
                 r.getId(), r.getNombre(), r.getDescripcion(), r.getUrlRepositorio(),
-                r.getPropietarioId(), r.getVisibilidad(), r.getColaboradoresIds(), r.getFechaCreacion());
+                r.getPropietarioId(), r.getSede(), r.getEstado(), r.getVisibilidad(),
+                r.getColaboradoresIds(), r.getArchivosAdjuntos(), r.getFechaCreacion());
     }
 }
